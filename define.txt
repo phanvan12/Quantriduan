@@ -1,4 +1,4 @@
-1. Về UnitTest
+﻿1. Về UnitTest
 
 - định nghĩa: là thủ tục để xác minh những module(unit) mã nguồn của phần mèm có hoạt động đúng hay không
 - UnitTest được thưc hiện bởi developers, không phải bởi Software testters hoặc là end-users.
