@@ -1,0 +1,43 @@
+1. Về UnitTest
+
+- định nghĩa: là thủ tục để xác minh những module(unit) mã nguồn của phần mèm có hoạt động đúng hay không
+- UnitTest được thưc hiện bởi developers, không phải bởi Software testters hoặc là end-users.
+- Lợi ích : 
+			+, Mục đích là phân chia các chương trình và đảm bảo các thành phân thực hiện đúng
+			+, Dễ dàng thay đổi code: programmer yên tâm khi chỉnh sửa code bằng việc test lại để xác định testcase nào bị lỗi để từ đó chỉnh sửa kịp thời
+			+, Dễ tích hợp: các module với interface rõ ràng và được đảm bảo unittest, dễ dàng cho intergrate test
+			+, Living document: develop có thể dựa vào test case để biết hệ thống có unit, hàm gì và sử dụng nó như nào. 
+- Hạn chế  :
+			+, Không phát hiện được hết các lỗi của chương trình
+			+, khi thay đổi interface của module cần sửa nhiều test case, dẫn đến thiết kế testcase bỏ đi các code trùng lặp. 
+
+2. Acceptance test
+- định nghĩa: phép kiểm tra thực hiện trên sản phẩm để xác định liệu nó có đáp ứng các yêu cầu không. 
+- Do khách hàng thực hiện(hoặc ủy quyền cho nhóm thứ 3 thực hiện) 
+- Mục đích: chứng minh phần mềm thỏa mãn tất các các yêu cầu khách hàng 
+- Đối với các phần mềm bán rộng rãi trên thị trường: thực hiện Alpha test và Beta test.
+		+, Alpha test: người sử dụng kiểm tra phần mềm ngay tại nơi phát triển phần mềm, lập trình viên ghi nhận lỗi hoặc phản hồi và lên kế hoạch sửa chữa.
+		+ Beta test: phần mềm được gửi tới cho người sử dụng để kiểm tra ngay trong môi trường thực tế, lỗi hoặc phản hồi cũng được gửi ngược lại cho lập trình viên để sửa.
+
+3. Stability Test
+
+- định nghĩa : là khả năng duy trì hoạt động của sản phẩm xuyên suốt và vượt quá thời hạn sử dụng của nó, mà không hỏng hoặc xảy ra lỗi.
+- Đây là 1 kỹ thuật non-functional, với mục đích đòi hỏi khả năng chịu tải của phần mềm tới mức tối đa. Trong quá trình xác định nó hoạt động tốt thế nào dưới tải ở mức chấp nhận được, mức đỉnh, các tải được tạo ra đột ngột, với số lượng dữ liệu lớn được xử lý. 
+- Mục đích : được thực hiện để kiểm tra hiệu quả của 1 sản phẩm được phát triển vượt qua mức hoạt động thông thường, hay tới một điểm dừng. Quan trọng hơn cả là việc  xử lý lỗi, độ tin cậy của phần mềm, khả năng chịu tải và khả năng mở rộng của 1 sản phẩm dưới tải lớn chứ không phải là kiểm tra cách hoạt động của hệ thống trong các hoàn cảnh bình thường.
+
+4. Automation Test
+- định nghĩa : Kiểm thử phần mềm tự động là quá trình kiểm tra hệ thống với dữ liệu đầu vào và đầu ra đã được xác định 1 cách tự động.
+- Kiểm thử tự động là một quá trình xử lý tự động các bước thực hiện một test case. Kiểm thử tự động được thực hiện bởi phần mềm kiểm thử tự động - hay còn gọi là Automation Testing Tool
+- Ưu điểm :
+			 +,Tính hiệu quả trong công việc: Ưu điểm lớn nhất của kiểm thử tự động là thay thế con người lặp đi lặp lại đúng quy tắc các bước kiểm thử nhàm chán, không biết mệt mỏi, không cần xin phép đột suất khi cần, không làm những việc ảnh hưởng đến quá trình test => tránh được hao phí về mặt thời gian.
+			 +, Độ tin cậy: Với những script chuyên nghiệp, một khi đã Execute thành công và nhận về kết quả thì chúng ta có thể yên tâm nó chạy đúng với những gì đã yêu cầu. Dù lặp đi lặp lại nhiều lần vẫn cho ra kết quả giống nhau do vậy độ ổn định cao, tránh được rủi ro có thể phát sinh. Ngoài ra, kiểm thử tự động còn giúp tái hiện bug một cách hiệu quả, những bug thỉnh thoảng mới xảy ra hay xảy ra một cách ngẫu nhiên sẽ được repdure một cách dễ dàng nhờ việc lưu lại các bước một cách tự động.
+			 +, Cải thiện chất lượng: Kiểm thử tự động làm giảm rủi ro về mặt chất lượng sản phẩm, việc kiểm thử được thực hiện một cách nhanh chóng, không gây mệt mỏi, tránh trường hợp chủ quan cho những trường hợp test hồi quy, retest, test toàn bộ hệ thống. Có thể tái sử dụng các trường hợp kiểm thử.
+			 +, Tốc độ xử lý cực nhanh: Nếu bạn mất 5 phút để kiểm thử thủ công thì chỉ cần mất 30s nếu sử dụng kiểm thử tự động, công việc của bạn là "Run" và ngồi chờ kết quả, nó giúp bạn chạy liên tiếp được nhiều case.
+			 +, Chi phí thấp: Việc rút ngắn thời gian và tiết kiệm nhân lực giúp cho việc kiểm thử tự động trở nên hiệu quả.
+- Nhược điểm : 
+			+, Ban đầu thì chi phí cho kiểm thử tự động sẽ cao hơn kiểm thử thủ công
+			+, Để kiểm thử tự động thực hiện được thì vẫn cần con người phải bỏ thời gian, công sức và tiền bạc
+			+, Mất chi phí cho các công cụ tự động hóa như bản quyền, bảo trì, tìm hiểu, training.
+			+, Khó mở rộng hơn nhiều so với kiểm thử thủ công
+			+, Yêu cầu những người có trình độ chuyên môn cao mới thực hiện được
+
